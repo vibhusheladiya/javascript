@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EVENT </title>
+</head>
+
+<body>
+   
+
+    <!-- <button type="button" onclick="log()">CLICK ME</button> -->
+    <button id="start">Start</button>
+<div id="shape">This is the shape element.</div>
+
+    <script>
+     
+
+     function generateRandomShape() {
+
+    var randomColor = ["red", "green", "blue", "orange", "purple"];
+    var radiusOptions = ["50%", ""]
+    var shape = document.getElementById("shape");  // <-- Just scan for the element once
+    
+    shape.style.backgroundColor = randomColor[Math.floor(Math.random() * randomColor.length)];
+    shape.style.borderRadius = radiusOptions[Math.floor(Math.random() * radiusOptions.length)];
+    shape.style.height = Math.random() * 500;
+    shape.style.width = shape.style.height;
+    shape.style.marginLeft = Math.random() * 1000;
+    shape.style.marginTop = Math.random() * 400;
+    };
+    
+    document.getElementById("start").addEventListener("click",function(){ 
+    
+        setTimeout(generateRandomShape,200)
+    });
+    document.getElementById("start").onclick = setTimeOut(generateRandomShape,2000);  
+    document.getElementById("start").onclick=randomOver;  
+         
+</script>
+</body>
+
+</html>
